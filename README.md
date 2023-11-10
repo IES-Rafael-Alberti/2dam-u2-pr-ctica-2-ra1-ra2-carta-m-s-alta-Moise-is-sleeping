@@ -52,3 +52,6 @@ Recursos:
 
 	** Si generáis los nombres de los recursos cómo el nombre del palo y su idDrawable os será muy fácil crear una función Composable que recupere el id del recurso...
 		Por ejemplo, algo así... "${carta.palo.toString().lowercase()}_${carta.idDrawable}"
+
+
+https://www.me.uk/cards/ 
