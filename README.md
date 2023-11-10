@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/A9eK7Esk)
 # DAM2_23_24_PMDM_U2_Practica02
 
 ## Práctica 2 - Carta más alta
@@ -51,3 +52,6 @@ Recursos:
 
 	** Si generáis los nombres de los recursos cómo el nombre del palo y su idDrawable os será muy fácil crear una función Composable que recupere el id del recurso...
 		Por ejemplo, algo así... "${carta.palo.toString().lowercase()}_${carta.idDrawable}"
+
+
+https://www.me.uk/cards/ 
