@@ -14,7 +14,7 @@ Crear dos clases llamadas Carta y Baraja.
 - La clase Carta tendrá las siguientes propiedades:
 	
 	* nombre (Naipes)
-	* palo (Palos)
+	* palo (Palos
 	* puntosMin (Int)
 	* puntosMax (Int)
 	* idDrawable (Int)
