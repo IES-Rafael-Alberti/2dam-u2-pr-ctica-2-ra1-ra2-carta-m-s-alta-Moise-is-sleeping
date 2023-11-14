@@ -43,6 +43,7 @@ import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         Deck.createDeck()
 
         setContent {
@@ -56,8 +57,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Buttons(){
     var selectedCard by remember { mutableStateOf(Card(PlayingCards.ace,Suites.spades,0,0,"backside")) }
+
     Column (
-        modifier = Modifier.fillMaxSize().background(Color.White),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ){
@@ -70,19 +74,30 @@ fun Buttons(){
             horizontalArrangement = Arrangement.Center
         ){
             Button(
-                modifier = Modifier.padding(10.dp).height(60.dp).width(160.dp),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .height(60.dp)
+                    .width(160.dp),
                 shape = RectangleShape,
                 colors = ButtonDefaults.buttonColors(Color.Black),
                 onClick = {
                     selectedCard = Deck.giveCard()
+
                 }) {
                 Text(text = "New Card")
             }
             Button(
-                modifier = Modifier.padding(10.dp).height(60.dp).width(160.dp),
+                modifier = Modifier
+                    .padding(10.dp)
+                    .height(60.dp)
+                    .width(160.dp),
                 shape = RectangleShape,
                 colors = ButtonDefaults.buttonColors(Color.Black),
-                onClick = { /*TODO*/ }) {
+                onClick = {
+                    Deck.deck.cardList.clear()
+                    Deck.createDeck()
+                    selectedCard = Card(PlayingCards.ace,Suites.spades,0,0,"backside")
+                }) {
                 Text(text = "Restart !")
             }
         }

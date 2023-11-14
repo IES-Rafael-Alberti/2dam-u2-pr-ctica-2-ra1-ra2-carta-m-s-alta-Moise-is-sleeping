@@ -1,12 +1,16 @@
 package com.moise.cartas
 
+import android.util.Log
+
 class Deck {
     var cardList = arrayListOf<Card>()
     companion object{
         val deck = Deck()
+        private const val tag = "DeckCreation"
         fun createDeck(): ArrayList<Card> {
             val numbers = PlayingCards.values()
             val suites = Suites.values()
+
             for (suite in suites ){
                 var counter = 2
                 var secondaryCounter = 0
@@ -29,6 +33,7 @@ class Deck {
 
                 }
             }
+            Log.d(tag,"List created")
             return deck.cardList
         }
         fun shuffle() {
@@ -38,9 +43,18 @@ class Deck {
 
         fun giveCard(): Card {
             shuffle()
-            val pickedCard = deck.cardList.last()
-            deck.cardList.dropLast(1)
-            return pickedCard
+            Log.d(tag, deck.cardList.size.toString())
+            if (deck.cardList.isNullOrEmpty()){
+                Log.d(tag,"empty")
+                return Card(PlayingCards.ace,Suites.spades,0,0,"backside")
+            }
+            else{
+                val card = deck.cardList.last()
+                deck.cardList = deck.cardList.dropLast(1) as ArrayList<Card>
+                   return card
+
+            }
+
         }
 
 
